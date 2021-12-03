@@ -3,9 +3,11 @@
 
 using namespace std;
 
-static int day2a()
+#define INPUT_FILENAME "../input/day02.txt"
+
+static int puzzle1()
 {
-    ifstream fs("../input/day2.txt");
+    ifstream fs(INPUT_FILENAME);
 
     if (fs.fail())
     {
@@ -45,9 +47,9 @@ static int day2a()
     return forward_sum * depth_sum;
 }
 
-static int day2b()
+static int puzzle2()
 {
-    ifstream fs("../input/day2.txt");
+    ifstream fs(INPUT_FILENAME);
 
     if (fs.fail())
     {
@@ -91,8 +93,8 @@ static int day2b()
 
 int main()
 {
-    auto answer_a = day2a();
-    auto answer_b = day2b();
+    auto answer1 = puzzle1();
+    auto answer2 = puzzle2();
 
-    printf("Day 2\nA: %d\nB: %d\n", answer_a, answer_b);
+    printf("Day 2\nA: %d\nB: %d\n", answer1, answer2);
 }

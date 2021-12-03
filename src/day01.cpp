@@ -3,9 +3,11 @@
 
 using namespace std;
 
-static int day1a()
+#define INPUT_FILENAME "../input/day01.txt"
+
+static int puzzle1()
 {
-    ifstream fs("../input/day1.txt");
+    ifstream fs(INPUT_FILENAME);
 
     if (fs.fail())
     {
@@ -32,9 +34,9 @@ static int day1a()
     return increases;
 }
 
-static int day1b()
+static int puzzle2()
 {
-    ifstream fs("../input/day1.txt");
+    ifstream fs(INPUT_FILENAME);
 
     if (fs.fail())
     {
@@ -68,8 +70,8 @@ static int day1b()
 
 int main()
 {
-    auto answer_a = day1a();
-    auto answer_b = day1b();
+    auto answer1 = puzzle1();
+    auto answer2 = puzzle2();
 
-    printf("Day 1\nA: %d\nB: %d\n", answer_a, answer_b);
+    printf("Day 1\nA: %d\nB: %d\n", answer1, answer2);
 }
