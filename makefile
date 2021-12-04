@@ -10,7 +10,7 @@ OUT_PATH := $(PROJ_PATH)/out
 
 .PHONY: all clean
 
-all: $(OUT_PATH)/day01 $(OUT_PATH)/day02
+all: $(OUT_PATH)/day01 $(OUT_PATH)/day02 $(OUT_PATH)/day03
 
 $(OUT_PATH)/%: $(SRC_PATH)/%.cpp
 	@mkdir -p $(OUT_PATH)
