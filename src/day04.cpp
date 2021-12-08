@@ -75,24 +75,20 @@ static int puzzle1()
 
     auto answer = 0;
 
-    for (auto n = numbers.begin(); n != numbers.end(); n++)
+    for (const auto number: numbers)
     {
-        value = *n;
-
-        for (auto c = cards.begin(); c != cards.end(); c++)
+        for (const auto& card: cards)
         {
-            auto card = *c;
-
             for (auto i = 0; i < CARD_SIZE * CARD_SIZE; i++)
             {
-                if (card[i] == value)
+                if (card[i] == number)
                 {
                     card[i] = 0;
 
                     if (is_winning_card(card))
                     {
                         for (auto i2 = 0; i2 < CARD_SIZE * CARD_SIZE; i2++) answer += card[i2];
-                        answer *= value;
+                        answer *= number;
                         break;
                     }
                 }
@@ -104,7 +100,7 @@ static int puzzle1()
         if (answer > 0) break;
     }
 
-    for (auto c = cards.begin(); c != cards.end(); c++) delete[] *c;
+    for (auto card: cards) delete[] card;
 
     return answer;
 }
@@ -151,10 +147,8 @@ static int puzzle2()
 
     auto answer = 0;
 
-    for (auto n = numbers.begin(); n != numbers.end(); n++)
+    for (const auto number: numbers)
     {
-        value = *n;
-
         auto c = cards.begin();
 
         while(c != cards.end())
@@ -164,7 +158,7 @@ static int puzzle2()
 
             for (auto i = 0; i < CARD_SIZE * CARD_SIZE; i++)
             {
-                if (card[i] == value)
+                if (card[i] == number)
                 {
                     card[i] = 0;
 
@@ -179,7 +173,7 @@ static int puzzle2()
                         else
                         {
                             for (auto i2 = 0; i2 < CARD_SIZE * CARD_SIZE; i2++) answer += card[i2];
-                            answer *= value;
+                            answer *= number;
                             break;
                         }
                     }
@@ -201,7 +195,7 @@ static int puzzle2()
         if (answer > 0) break;
     }
 
-    for (auto c = cards.begin(); c != cards.end(); c++) delete[] *c;
+    for (auto card: cards) delete[] card;
 
     return answer;
 }

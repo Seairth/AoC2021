@@ -115,9 +115,9 @@ static int puzzle2()
     {
         auto ones = 0;
 
-        for (auto c = co2.begin(); c != co2.end(); c++)
+        for (const auto& c: co2)
         {
-            if ((*c)[i] == '1') ones++;
+            if (c[i] == '1') ones++;
         }
 
         auto keep = '0';

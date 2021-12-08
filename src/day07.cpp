@@ -41,9 +41,9 @@ static uint64_t solve(Functor fuelcost)
     {
         uint64_t sum = 0;
 
-        for (auto crab = crabs.begin(); crab != crabs.end(); crab++)
+        for (const auto& crab: crabs)
         {
-            sum += crab->second * fuelcost(abs(position - crab->first));
+            sum += crab.second * fuelcost(abs(position - crab.first));
         }
 
         if (sum < answer) answer = sum;

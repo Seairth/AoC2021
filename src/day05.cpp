@@ -78,13 +78,13 @@ static int solve(bool diagonal)
 
     int answer = 0;
 
-    for (auto x_iter = grid.begin(); x_iter != grid.end(); x_iter++)
+    for (const auto& x: grid)
     {
-        auto subgrid = x_iter->second;
+        auto subgrid = x.second;
 
-        for (auto y_iter = subgrid.begin(); y_iter != subgrid.end(); y_iter++)
+        for (const auto& y: subgrid)
         {
-            if (y_iter->second > 1)
+            if (y.second > 1)
             {
                 answer++;
             }
