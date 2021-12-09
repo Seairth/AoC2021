@@ -1,5 +1,5 @@
 CXX := clang++
-CXXFLAGS := -O0
+CXXFLAGS := -O0 -std=c++17
 
 PROJ_PATH := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
@@ -10,7 +10,7 @@ OUT_PATH := $(PROJ_PATH)/out
 
 .PHONY: all clean
 
-all: $(OUT_PATH)/day01 $(OUT_PATH)/day02 $(OUT_PATH)/day03 $(OUT_PATH)/day04 $(OUT_PATH)/day05 $(OUT_PATH)/day06 $(OUT_PATH)/day07
+all: $(OUT_PATH)/day01 $(OUT_PATH)/day02 $(OUT_PATH)/day03 $(OUT_PATH)/day04 $(OUT_PATH)/day05 $(OUT_PATH)/day06 $(OUT_PATH)/day07 $(OUT_PATH)/day08
 
 $(OUT_PATH)/%: $(SRC_PATH)/%.cpp
 	@mkdir -p $(OUT_PATH)
