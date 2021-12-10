@@ -14,7 +14,7 @@ all: week1 week2
 
 week1: $(OUT_PATH)/day01 $(OUT_PATH)/day02 $(OUT_PATH)/day03 $(OUT_PATH)/day04 $(OUT_PATH)/day05 $(OUT_PATH)/day06 $(OUT_PATH)/day07
 
-week2: $(OUT_PATH)/day08 $(OUT_PATH)/day09
+week2: $(OUT_PATH)/day08 $(OUT_PATH)/day09 $(OUT_PATH)/day10
 
 $(OUT_PATH)/%: $(SRC_PATH)/%.cpp
 	@mkdir -p $(OUT_PATH)
